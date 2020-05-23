@@ -158,17 +158,13 @@
 		240EA0242478766D007828E5 /* EventList */ = {
 			isa = PBXGroup;
 			children = (
-				240EA0252478766D007828E5 /* AppDelegate.swift */,
-				240EA0272478766D007828E5 /* SceneDelegate.swift */,
 				240EA0972478BCAC007828E5 /* View */,
 				240EA05524787FD4007828E5 /* Model */,
-				240EA0292478766D007828E5 /* ViewController.swift */,
-				240EA02B2478766D007828E5 /* Main.storyboard */,
-				240EA02E2478766F007828E5 /* Assets.xcassets */,
-				240EA0302478766F007828E5 /* LaunchScreen.storyboard */,
+				240EA0782478A873007828E5 /* Restful Service */,
+				2430C8CC2479D977000FBA10 /* App */,
+				2430C8CF2479DB33000FBA10 /* Source */,
+				2430C8CD2479D9B1000FBA10 /* Resources */,
 				240EA0332478766F007828E5 /* Info.plist */,
-				240EA0842478ABB6007828E5 /* AppConfig.plist */,
-				240EA0862478AC55007828E5 /* AppConfig.swift */,
 			);
 			path = EventList;
 			sourceTree = "<group>";
@@ -195,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				240EA05E247880F5007828E5 /* Data */,
-				240EA0782478A873007828E5 /* Restful Service */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -286,6 +281,43 @@
 				2430C8C72479BC1D000FBA10 /* ImageItem.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		2430C8CB2479D96A000FBA10 /* AppConfig */ = {
+			isa = PBXGroup;
+			children = (
+				240EA0842478ABB6007828E5 /* AppConfig.plist */,
+				240EA0862478AC55007828E5 /* AppConfig.swift */,
+			);
+			path = AppConfig;
+			sourceTree = "<group>";
+		};
+		2430C8CC2479D977000FBA10 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2430C8CB2479D96A000FBA10 /* AppConfig */,
+				240EA0252478766D007828E5 /* AppDelegate.swift */,
+				240EA0272478766D007828E5 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2430C8CD2479D9B1000FBA10 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				240EA02E2478766F007828E5 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2430C8CF2479DB33000FBA10 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				240EA0292478766D007828E5 /* ViewController.swift */,
+				240EA02B2478766D007828E5 /* Main.storyboard */,
+				240EA0302478766F007828E5 /* LaunchScreen.storyboard */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		A0624FB88B1347179A2D6AC1 /* Pods */ = {

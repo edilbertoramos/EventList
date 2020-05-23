@@ -9,6 +9,7 @@ target 'EventList' do
   pod 'Alamofire'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'PureLayout'
 
   target 'EventListTests' do
     inherit! :search_paths

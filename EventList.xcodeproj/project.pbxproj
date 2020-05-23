@@ -19,6 +19,11 @@
 		240EA0592478802C007828E5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EA0582478802C007828E5 /* Event.swift */; };
 		240EA05B24788069007828E5 /* Cupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EA05A24788069007828E5 /* Cupon.swift */; };
 		240EA05D24788076007828E5 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EA05C24788076007828E5 /* CheckIn.swift */; };
+		240EA07B2478A94F007828E5 /* ServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EA07A2478A94F007828E5 /* ServiceHelper.swift */; };
+		240EA07D2478A965007828E5 /* ServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EA07C2478A965007828E5 /* ServiceResponse.swift */; };
+		240EA07F2478A972007828E5 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EA07E2478A972007828E5 /* ServiceError.swift */; };
+		240EA0812478A988007828E5 /* ELError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EA0802478A988007828E5 /* ELError.swift */; };
+		240EA0832478A996007828E5 /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EA0822478A996007828E5 /* HttpStatusCode.swift */; };
 		25769681C7EDA1439B755E61 /* Pods_EventList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9391656A09E9E764398D0956 /* Pods_EventList.framework */; };
 		9CE85CE15584A5AA54455DDB /* Pods_EventListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9F8C228F8055227B99B5AE /* Pods_EventListUITests.framework */; };
 		F68307F530D143F38ED28067 /* Pods_EventListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69986FFBF8F06ED1871A01FD /* Pods_EventListTests.framework */; };
@@ -61,6 +66,11 @@
 		240EA0582478802C007828E5 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		240EA05A24788069007828E5 /* Cupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cupon.swift; sourceTree = "<group>"; };
 		240EA05C24788076007828E5 /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
+		240EA07A2478A94F007828E5 /* ServiceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHelper.swift; sourceTree = "<group>"; };
+		240EA07C2478A965007828E5 /* ServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResponse.swift; sourceTree = "<group>"; };
+		240EA07E2478A972007828E5 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		240EA0802478A988007828E5 /* ELError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELError.swift; sourceTree = "<group>"; };
+		240EA0822478A996007828E5 /* HttpStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
 		4F53286F28371B34B710F054 /* Pods-EventList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventList.debug.xcconfig"; path = "Target Support Files/Pods-EventList/Pods-EventList.debug.xcconfig"; sourceTree = "<group>"; };
 		69986FFBF8F06ED1871A01FD /* Pods_EventListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		830F66CFFF00DB5FF337716C /* Pods-EventListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventListTests.debug.xcconfig"; path = "Target Support Files/Pods-EventListTests/Pods-EventListTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				240EA05E247880F5007828E5 /* Data */,
+				240EA0782478A873007828E5 /* Restful Service */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +182,26 @@
 				240EA05C24788076007828E5 /* CheckIn.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		240EA0782478A873007828E5 /* Restful Service */ = {
+			isa = PBXGroup;
+			children = (
+				240EA0792478A92B007828E5 /* Service Helper */,
+			);
+			path = "Restful Service";
+			sourceTree = "<group>";
+		};
+		240EA0792478A92B007828E5 /* Service Helper */ = {
+			isa = PBXGroup;
+			children = (
+				240EA07A2478A94F007828E5 /* ServiceHelper.swift */,
+				240EA07C2478A965007828E5 /* ServiceResponse.swift */,
+				240EA07E2478A972007828E5 /* ServiceError.swift */,
+				240EA0802478A988007828E5 /* ELError.swift */,
+				240EA0822478A996007828E5 /* HttpStatusCode.swift */,
+			);
+			path = "Service Helper";
 			sourceTree = "<group>";
 		};
 		A0624FB88B1347179A2D6AC1 /* Pods */ = {
@@ -417,13 +448,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				240EA07F2478A972007828E5 /* ServiceError.swift in Sources */,
 				240EA05724787FF7007828E5 /* People.swift in Sources */,
 				240EA05B24788069007828E5 /* Cupon.swift in Sources */,
 				240EA02A2478766D007828E5 /* ViewController.swift in Sources */,
 				240EA0262478766D007828E5 /* AppDelegate.swift in Sources */,
 				240EA0282478766D007828E5 /* SceneDelegate.swift in Sources */,
 				240EA05D24788076007828E5 /* CheckIn.swift in Sources */,
+				240EA07D2478A965007828E5 /* ServiceResponse.swift in Sources */,
+				240EA0812478A988007828E5 /* ELError.swift in Sources */,
 				240EA0592478802C007828E5 /* Event.swift in Sources */,
+				240EA0832478A996007828E5 /* HttpStatusCode.swift in Sources */,
+				240EA07B2478A94F007828E5 /* ServiceHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -41,4 +41,6 @@ extension People: Decodable {
     }
 }
 
-
+extension People: Encodable {
+    
+}

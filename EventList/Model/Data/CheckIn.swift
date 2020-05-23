@@ -14,6 +14,10 @@ struct CheckIn {
     var email: String
 }
 
+extension CheckIn: Decodable {
+    
+}
+
 extension CheckIn: Encodable {
     enum keys: String, CodingKey {
         case eventId

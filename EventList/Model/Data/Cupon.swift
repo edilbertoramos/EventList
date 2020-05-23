@@ -35,3 +35,7 @@ extension Cupon: Decodable {
         }
     }
 }
+
+extension Cupon: Encodable {
+    
+}

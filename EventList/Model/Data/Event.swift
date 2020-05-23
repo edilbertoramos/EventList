@@ -66,3 +66,7 @@ extension Event: Decodable {
         self.cupons = try container.decode([Cupon].self, forKey: .cupons)
     }
 }
+
+extension Event: Encodable {
+    
+}

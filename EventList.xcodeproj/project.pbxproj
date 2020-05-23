@@ -27,6 +27,11 @@
 		240EA0852478ABB6007828E5 /* AppConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 240EA0842478ABB6007828E5 /* AppConfig.plist */; };
 		240EA0872478AC55007828E5 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EA0862478AC55007828E5 /* AppConfig.swift */; };
 		240EA0892478AD06007828E5 /* ServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EA0882478AD06007828E5 /* ServiceEndpoint.swift */; };
+		240EA08D2478AE1B007828E5 /* EventServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EA08C2478AE1B007828E5 /* EventServiceProtocol.swift */; };
+		240EA08F2478AE41007828E5 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EA08E2478AE41007828E5 /* EventService.swift */; };
+		240EA0912478AFAE007828E5 /* CheckInServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EA0902478AFAE007828E5 /* CheckInServiceProtocol.swift */; };
+		240EA0932478B00F007828E5 /* CheckInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EA0922478B00F007828E5 /* CheckInService.swift */; };
+		240EA0962478B826007828E5 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EA0952478B826007828E5 /* Encodable+Extension.swift */; };
 		25769681C7EDA1439B755E61 /* Pods_EventList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9391656A09E9E764398D0956 /* Pods_EventList.framework */; };
 		9CE85CE15584A5AA54455DDB /* Pods_EventListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9F8C228F8055227B99B5AE /* Pods_EventListUITests.framework */; };
 		F68307F530D143F38ED28067 /* Pods_EventListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69986FFBF8F06ED1871A01FD /* Pods_EventListTests.framework */; };
@@ -77,6 +82,11 @@
 		240EA0842478ABB6007828E5 /* AppConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppConfig.plist; sourceTree = "<group>"; };
 		240EA0862478AC55007828E5 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		240EA0882478AD06007828E5 /* ServiceEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceEndpoint.swift; sourceTree = "<group>"; };
+		240EA08C2478AE1B007828E5 /* EventServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventServiceProtocol.swift; sourceTree = "<group>"; };
+		240EA08E2478AE41007828E5 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
+		240EA0902478AFAE007828E5 /* CheckInServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInServiceProtocol.swift; sourceTree = "<group>"; };
+		240EA0922478B00F007828E5 /* CheckInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInService.swift; sourceTree = "<group>"; };
+		240EA0952478B826007828E5 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		4F53286F28371B34B710F054 /* Pods-EventList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventList.debug.xcconfig"; path = "Target Support Files/Pods-EventList/Pods-EventList.debug.xcconfig"; sourceTree = "<group>"; };
 		69986FFBF8F06ED1871A01FD /* Pods_EventListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		830F66CFFF00DB5FF337716C /* Pods-EventListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventListTests.debug.xcconfig"; path = "Target Support Files/Pods-EventListTests/Pods-EventListTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -195,6 +205,9 @@
 		240EA0782478A873007828E5 /* Restful Service */ = {
 			isa = PBXGroup;
 			children = (
+				240EA0942478B810007828E5 /* Extensions */,
+				240EA08A2478ADD1007828E5 /* Service */,
+				240EA08B2478ADE4007828E5 /* Protocol */,
 				240EA0792478A92B007828E5 /* Service Helper */,
 			);
 			path = "Restful Service";
@@ -211,6 +224,32 @@
 				240EA0822478A996007828E5 /* HttpStatusCode.swift */,
 			);
 			path = "Service Helper";
+			sourceTree = "<group>";
+		};
+		240EA08A2478ADD1007828E5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				240EA08E2478AE41007828E5 /* EventService.swift */,
+				240EA0922478B00F007828E5 /* CheckInService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		240EA08B2478ADE4007828E5 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				240EA08C2478AE1B007828E5 /* EventServiceProtocol.swift */,
+				240EA0902478AFAE007828E5 /* CheckInServiceProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		240EA0942478B810007828E5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				240EA0952478B826007828E5 /* Encodable+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A0624FB88B1347179A2D6AC1 /* Pods */ = {
@@ -458,8 +497,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				240EA08F2478AE41007828E5 /* EventService.swift in Sources */,
 				240EA0892478AD06007828E5 /* ServiceEndpoint.swift in Sources */,
 				240EA07F2478A972007828E5 /* ServiceError.swift in Sources */,
+				240EA0912478AFAE007828E5 /* CheckInServiceProtocol.swift in Sources */,
+				240EA0962478B826007828E5 /* Encodable+Extension.swift in Sources */,
 				240EA05724787FF7007828E5 /* People.swift in Sources */,
 				240EA05B24788069007828E5 /* Cupon.swift in Sources */,
 				240EA02A2478766D007828E5 /* ViewController.swift in Sources */,
@@ -469,6 +511,8 @@
 				240EA07D2478A965007828E5 /* ServiceResponse.swift in Sources */,
 				240EA0812478A988007828E5 /* ELError.swift in Sources */,
 				240EA0592478802C007828E5 /* Event.swift in Sources */,
+				240EA0932478B00F007828E5 /* CheckInService.swift in Sources */,
+				240EA08D2478AE1B007828E5 /* EventServiceProtocol.swift in Sources */,
 				240EA0872478AC55007828E5 /* AppConfig.swift in Sources */,
 				240EA0832478A996007828E5 /* HttpStatusCode.swift in Sources */,
 				240EA07B2478A94F007828E5 /* ServiceHelper.swift in Sources */,

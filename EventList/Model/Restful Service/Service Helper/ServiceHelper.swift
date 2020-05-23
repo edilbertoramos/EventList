@@ -15,6 +15,22 @@ public struct ServiceHelper {
         return Alamofire.SessionManager.default
     }
     
+    static public var baseUrl: String {
+        return AppConfig.config(withKey: .ServiceUrl)
+    }
+    
+    static public func mountUrl(_ url: String = baseUrl, withEndPoint service: ServiceEndpoint) -> String {
+        return "\(baseUrl)/\(service.endpoint)"
+    }
+    
+    static public func mountUrl(_ url: String = baseUrl, withEndPoint service: ServiceEndpoint, pathParameters parameters: String...) -> String {
+        return String(format: mountUrl(url, withEndPoint: service), parameters)
+    }
+    
+    static public func addParams(_ params: [String: Any], onUrl url: String = baseUrl) -> String {
+        return "\(url)?\(params.map{(k, v) in "\(k)=\(v)"}.joined(separator: "&"))"
+    }
+    
 }
 
 // MARK:- Service request brigde

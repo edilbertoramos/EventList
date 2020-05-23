@@ -11,7 +11,7 @@ import PureLayout
 
 class EventView: UIView {
     
-    private let tableView = UITableView.newAutoLayout()
+    public let tableView = UITableView.newAutoLayout()
 
     override init(frame: CGRect) {
         super.init(frame: frame)

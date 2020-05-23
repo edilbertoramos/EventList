@@ -34,6 +34,8 @@
 		240EA0962478B826007828E5 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EA0952478B826007828E5 /* Encodable+Extension.swift */; };
 		240EA09B2478BD05007828E5 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EA09A2478BD05007828E5 /* EventViewController.swift */; };
 		240EA09E247944BB007828E5 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EA09D247944BB007828E5 /* EventView.swift */; };
+		2430C8C524795E2D000FBA10 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C8C424795E2D000FBA10 /* EventCell.swift */; };
+		2430C8C82479BC1D000FBA10 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C8C72479BC1D000FBA10 /* ImageItem.swift */; };
 		25769681C7EDA1439B755E61 /* Pods_EventList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9391656A09E9E764398D0956 /* Pods_EventList.framework */; };
 		9CE85CE15584A5AA54455DDB /* Pods_EventListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9F8C228F8055227B99B5AE /* Pods_EventListUITests.framework */; };
 		F68307F530D143F38ED28067 /* Pods_EventListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69986FFBF8F06ED1871A01FD /* Pods_EventListTests.framework */; };
@@ -91,6 +93,8 @@
 		240EA0952478B826007828E5 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		240EA09A2478BD05007828E5 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		240EA09D247944BB007828E5 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		2430C8C424795E2D000FBA10 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		2430C8C72479BC1D000FBA10 /* ImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
 		4F53286F28371B34B710F054 /* Pods-EventList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventList.debug.xcconfig"; path = "Target Support Files/Pods-EventList/Pods-EventList.debug.xcconfig"; sourceTree = "<group>"; };
 		69986FFBF8F06ED1871A01FD /* Pods_EventListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		830F66CFFF00DB5FF337716C /* Pods-EventListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventListTests.debug.xcconfig"; path = "Target Support Files/Pods-EventListTests/Pods-EventListTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 		240EA0972478BCAC007828E5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2430C8C62479BBE2000FBA10 /* Utils */,
 				240EA09C2479449A007828E5 /* EventView */,
 			);
 			path = View;
@@ -270,8 +275,17 @@
 			children = (
 				240EA09A2478BD05007828E5 /* EventViewController.swift */,
 				240EA09D247944BB007828E5 /* EventView.swift */,
+				2430C8C424795E2D000FBA10 /* EventCell.swift */,
 			);
 			path = EventView;
+			sourceTree = "<group>";
+		};
+		2430C8C62479BBE2000FBA10 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2430C8C72479BC1D000FBA10 /* ImageItem.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		A0624FB88B1347179A2D6AC1 /* Pods */ = {
@@ -525,6 +539,7 @@
 				240EA0912478AFAE007828E5 /* CheckInServiceProtocol.swift in Sources */,
 				240EA0962478B826007828E5 /* Encodable+Extension.swift in Sources */,
 				240EA09B2478BD05007828E5 /* EventViewController.swift in Sources */,
+				2430C8C524795E2D000FBA10 /* EventCell.swift in Sources */,
 				240EA05724787FF7007828E5 /* People.swift in Sources */,
 				240EA05B24788069007828E5 /* Cupon.swift in Sources */,
 				240EA02A2478766D007828E5 /* ViewController.swift in Sources */,
@@ -538,6 +553,7 @@
 				240EA08D2478AE1B007828E5 /* EventServiceProtocol.swift in Sources */,
 				240EA0872478AC55007828E5 /* AppConfig.swift in Sources */,
 				240EA0832478A996007828E5 /* HttpStatusCode.swift in Sources */,
+				2430C8C82479BC1D000FBA10 /* ImageItem.swift in Sources */,
 				240EA09E247944BB007828E5 /* EventView.swift in Sources */,
 				240EA07B2478A94F007828E5 /* ServiceHelper.swift in Sources */,
 			);

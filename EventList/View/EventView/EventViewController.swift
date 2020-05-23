@@ -7,16 +7,36 @@
 //
 
 import UIKit
-import PureLayout
 
 class EventViewController: UIViewController {
 
+    private let eventView = EventView.newAutoLayout()
+    
     override func loadView() {
-        self.view = EventView.init()
+        self.view = eventView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        eventView.tableView.register(EventCell.self, forCellReuseIdentifier: EventCell.cellIdentifier)
+        eventView.tableView.delegate = self
+        eventView.tableView.dataSource = self
     }
 
+}
+
+//MARK: - Rx Setup
+extension EventViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: EventCell.cellIdentifier, for: indexPath) as! EventCell
+        cell.fill(title: "Title \(indexPath.row+1)")
+        
+        return cell
+    }
+    
 }

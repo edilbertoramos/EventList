@@ -62,11 +62,7 @@ extension Event: Decodable {
         if let price = try container.decodeIfPresent(Double.self, forKey: .price) {
             self.price = price
         }
-        if let people = try container.decodeIfPresent([People].self, forKey: .people) {
-            self.people = people
-        }
-        if let cupons = try container.decodeIfPresent([Cupon].self, forKey: .cupons) {
-            self.cupons = cupons
-        }
+        self.people = try container.decode([People].self, forKey: .people)
+        self.cupons = try container.decode([Cupon].self, forKey: .cupons)
     }
 }

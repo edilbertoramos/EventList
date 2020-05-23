@@ -11,7 +11,7 @@ import Foundation
 struct Cupon {
     var id: String?
     var eventId: String?
-    var discount: String?
+    var discount: Double?
 }
 
 extension Cupon: Decodable {
@@ -30,7 +30,7 @@ extension Cupon: Decodable {
         if let eventId = try container.decodeIfPresent(String.self, forKey: .eventId) {
             self.eventId = eventId
         }
-        if let discount = try container.decodeIfPresent(String.self, forKey: .discount) {
+        if let discount = try container.decodeIfPresent(Double.self, forKey: .discount) {
             self.discount = discount
         }
     }

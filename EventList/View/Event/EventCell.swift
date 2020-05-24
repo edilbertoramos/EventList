@@ -87,6 +87,7 @@ extension EventCell {
     
 }
 
+//MARK: Download Image
 extension EventCell {
     
     private func downloadImage(image: String?) {

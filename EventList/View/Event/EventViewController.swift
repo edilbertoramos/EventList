@@ -12,7 +12,7 @@ import RxCocoa
 
 class EventViewController: UIViewController {
 
-    private let eventView = EventView.newAutoLayout()
+    private let eventView = EventView()
     private let disposeBag = DisposeBag()
     private var viewModel = EventViewModel()
 
@@ -32,6 +32,7 @@ class EventViewController: UIViewController {
 extension EventViewController {
     
     private func setup() {
+        title = "Events"
         eventView.tableView.register(EventCell.self, forCellReuseIdentifier: EventCell.cellIdentifier)
         setupTableView()
         setupError()
@@ -68,7 +69,9 @@ extension EventViewController {
             .modelSelected(Event.self)
             .subscribe(onNext: { event in
                 // TODO: - push to event detail -
-                print(event)
+                if let indexPath = self.eventView.tableView.indexPathForSelectedRow {
+                    self.eventView.tableView.deselectRow(at: indexPath, animated: true)
+                }
             })
             .disposed(by: disposeBag)
     }

@@ -12,7 +12,8 @@ protocol EventServiceProtocol {
     
     func events(callback: @escaping (ServiceResponse<[Event]>) -> Void)
     func event(with eventId: String, callback: @escaping (ServiceResponse<Event>) -> Void)
-    
+    func image(with uri: String, completion: @escaping (_ success: Bool, _ data: Data?) -> Void)
+
 }
 
 

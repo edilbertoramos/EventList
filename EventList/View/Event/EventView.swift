@@ -27,6 +27,7 @@ class EventView: UIView {
     
     private func commonInit() {
         addSubview(tableView)
+        tableView.separatorStyle = .none
         autoLayout()
     }
 

@@ -26,4 +26,20 @@ struct EventService: EventServiceProtocol {
         ServiceHelper.get(url: uri, callbackForObject: callback)
     }
     
+    func image(with uri: String, completion: @escaping (Bool, Data?) -> Void) {
+        let urlRequest = try! URLRequest(url: uri, method: .get, headers: nil)
+        Alamofire.request(urlRequest)
+            .downloadProgress { progress in
+                //print("Download Progress: \(progress.fractionCompleted)")
+            }
+            .responseData { response in
+            if let data = response.result.value {
+                completion(true, data)
+            }
+            else {
+                completion(false, nil)
+            }
+        }
+    }
+    
 }

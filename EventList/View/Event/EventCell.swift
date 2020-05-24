@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import Alamofire
 
 class EventCell: UITableViewCell {
 
     public static let cellIdentifier = "EventCellIdentifier"
-    private let imageViewHeight: CGFloat = 400
+    private let imageViewHeight: CGFloat = 340
     private let margin: CGFloat = 16
 
     private let labelTitle: UILabel = {
@@ -24,6 +23,12 @@ class EventCell: UITableViewCell {
         let imageView = UIImageView.init()
         imageView.contentMode = .scaleAspectFit
         return imageView
+    }()
+    
+    private let activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView.init()
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
     }()
     
     required init?(coder aDecoder: NSCoder) {
@@ -52,6 +57,7 @@ extension EventCell {
     private func commonInit() {
         addSubview(labelTitle)
         addSubview(imageViewEvent)
+        imageViewEvent.addSubview(activityIndicator)
         autoLayout()
     }
     
@@ -65,7 +71,10 @@ extension EventCell {
         imageViewEvent.autoPinEdge(toSuperviewEdge: .trailing, withInset: margin)
         imageViewEvent.autoPinEdge(toSuperviewEdge: .bottom, withInset: margin)
         imageViewEvent.autoSetDimension(.height, toSize: imageViewHeight)
+        
+        activityIndicator.autoCenterInSuperview()
     }
+    
 }
 
 //MARK: Public Methods
@@ -73,7 +82,28 @@ extension EventCell {
    
     public func fill(event: Event) {
         labelTitle.text = event.title
-        imageViewEvent.image = ImageItem.template.image
+        downloadImage(image: event.image)
+    }
+    
+}
+
+extension EventCell {
+    
+    private func downloadImage(image: String?) {
+        activityIndicator.startAnimating()
+        guard let uri = image else { return }
+        EventService().image(with: uri) { (success, data) in
+            self.activityIndicator.stopAnimating()
+            if success {
+                if let data = data, let image = UIImage(data: data) {
+                    self.imageViewEvent.image = image
+                } else {
+                    self.imageViewEvent.image = ImageItem.template.image
+                }
+            } else {
+                self.imageViewEvent.image = ImageItem.template.image
+            }
+        }
     }
     
 }

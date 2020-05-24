@@ -35,6 +35,7 @@ extension EventViewController {
         eventView.tableView.register(EventCell.self, forCellReuseIdentifier: EventCell.cellIdentifier)
         setupTableView()
         setupError()
+        setupSelection()
     }
     
     private func setupTableView() {
@@ -57,6 +58,17 @@ extension EventViewController {
                     alert.addAction(.init(title: "OK", style: .default))
                     self.present(alert, animated: true, completion: nil)
                 }
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func setupSelection() {
+        eventView.tableView
+            .rx
+            .modelSelected(Event.self)
+            .subscribe(onNext: { event in
+                // TODO: - push to event detail -
+                print(event)
             })
             .disposed(by: disposeBag)
     }

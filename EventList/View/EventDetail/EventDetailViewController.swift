@@ -53,6 +53,21 @@ extension EventDetailViewController {
             navigationController?.navigationBar.prefersLargeTitles = true
         }
         tableView.tableHeaderView = imageViewEvent
+        let buttonCheckIn = UIBarButtonItem.init(title: "Check-In", style: .plain, target: self, action: #selector(checkIn))
+        let buttonShare = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: #selector(share))
+        navigationItem.rightBarButtonItems = [buttonShare, buttonCheckIn]
+    }
+}
+
+//MARK: - Actions
+extension EventDetailViewController {
+    
+    @objc private func checkIn() {
+        print("CheckIn")
+    }
+    
+    @objc private func share() {
+        print("Share")
     }
 }
 

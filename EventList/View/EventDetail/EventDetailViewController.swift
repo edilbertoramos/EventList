@@ -56,6 +56,7 @@ extension EventDetailViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = estimateRowHeight
         tableView.register(EventDetailCell.self, forCellReuseIdentifier: EventDetailCell.cellIdentifier)
+        tableView.register(EventLocationCell.self, forCellReuseIdentifier: EventLocationCell.cellIdentifier)
 
         let buttonCheckIn = UIBarButtonItem.init(title: "Check-In", style: .plain, target: self, action: #selector(checkIn))
         let buttonShare = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: #selector(share))
@@ -109,6 +110,11 @@ extension EventDetailViewController {
                     let cell = tableView.dequeueReusableCell(withIdentifier: EventDetailCell.cellIdentifier,
                                                              for: indexPath) as! EventDetailCell
                     cell.fill(eventDetail: eventDetail)
+                    return cell
+                } else if let eventLocation = detail as? EventLocation {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: EventLocationCell.cellIdentifier,
+                                                             for: indexPath) as! EventLocationCell
+                    cell.fill(eventLocation: eventLocation)
                     return cell
                 } else {
                     return UITableViewCell.init()

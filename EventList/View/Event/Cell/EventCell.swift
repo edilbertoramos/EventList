@@ -56,6 +56,7 @@ class EventCell: UITableViewCell {
 extension EventCell {
     
     private func commonInit() {
+        selectionStyle = .none
         addSubview(labelTitle)
         addSubview(imageViewEvent)
         imageViewEvent.addSubview(activityIndicator)

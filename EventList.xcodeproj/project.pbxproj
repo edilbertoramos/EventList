@@ -46,6 +46,9 @@
 		2430C8F0247AF9DB000FBA10 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C8EF247AF9DB000FBA10 /* Date+Extension.swift */; };
 		2430C8F2247AFA6C000FBA10 /* DateFormatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C8F1247AFA6C000FBA10 /* DateFormatItem.swift */; };
 		2430C8F4247AFEAC000FBA10 /* EventDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C8F3247AFEAC000FBA10 /* EventDetail.swift */; };
+		2430C8F8247B13CB000FBA10 /* EventLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C8F7247B13CB000FBA10 /* EventLocationCell.swift */; };
+		2430C8FA247B1562000FBA10 /* EventLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C8F9247B1562000FBA10 /* EventLocation.swift */; };
+		2430C8FC247B222C000FBA10 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2430C8FB247B222C000FBA10 /* MapKit.framework */; };
 		25769681C7EDA1439B755E61 /* Pods_EventList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9391656A09E9E764398D0956 /* Pods_EventList.framework */; };
 		9CE85CE15584A5AA54455DDB /* Pods_EventListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9F8C228F8055227B99B5AE /* Pods_EventListUITests.framework */; };
 		F68307F530D143F38ED28067 /* Pods_EventListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69986FFBF8F06ED1871A01FD /* Pods_EventListTests.framework */; };
@@ -115,6 +118,9 @@
 		2430C8EF247AF9DB000FBA10 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		2430C8F1247AFA6C000FBA10 /* DateFormatItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatItem.swift; sourceTree = "<group>"; };
 		2430C8F3247AFEAC000FBA10 /* EventDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetail.swift; sourceTree = "<group>"; };
+		2430C8F7247B13CB000FBA10 /* EventLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLocationCell.swift; sourceTree = "<group>"; };
+		2430C8F9247B1562000FBA10 /* EventLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLocation.swift; sourceTree = "<group>"; };
+		2430C8FB247B222C000FBA10 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4F53286F28371B34B710F054 /* Pods-EventList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventList.debug.xcconfig"; path = "Target Support Files/Pods-EventList/Pods-EventList.debug.xcconfig"; sourceTree = "<group>"; };
 		69986FFBF8F06ED1871A01FD /* Pods_EventListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		830F66CFFF00DB5FF337716C /* Pods-EventListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventListTests.debug.xcconfig"; path = "Target Support Files/Pods-EventListTests/Pods-EventListTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2430C8FC247B222C000FBA10 /* MapKit.framework in Frameworks */,
 				25769681C7EDA1439B755E61 /* Pods_EventList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +228,7 @@
 			children = (
 				240EA0582478802C007828E5 /* Event.swift */,
 				2430C8F3247AFEAC000FBA10 /* EventDetail.swift */,
+				2430C8F9247B1562000FBA10 /* EventLocation.swift */,
 				240EA05624787FF7007828E5 /* People.swift */,
 				240EA05A24788069007828E5 /* Cupon.swift */,
 				240EA05C24788076007828E5 /* CheckIn.swift */,
@@ -402,6 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				2430C8EB247AF8A3000FBA10 /* EventDetailCell.swift */,
+				2430C8F7247B13CB000FBA10 /* EventLocationCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -422,6 +431,7 @@
 		C4DED9CA79C8B9949F0F39C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2430C8FB247B222C000FBA10 /* MapKit.framework */,
 				9391656A09E9E764398D0956 /* Pods_EventList.framework */,
 				69986FFBF8F06ED1871A01FD /* Pods_EventListTests.framework */,
 				FC9F8C228F8055227B99B5AE /* Pods_EventListUITests.framework */,
@@ -663,9 +673,11 @@
 				240EA05724787FF7007828E5 /* People.swift in Sources */,
 				240EA05B24788069007828E5 /* Cupon.swift in Sources */,
 				240EA02A2478766D007828E5 /* ViewController.swift in Sources */,
+				2430C8FA247B1562000FBA10 /* EventLocation.swift in Sources */,
 				240EA0262478766D007828E5 /* AppDelegate.swift in Sources */,
 				240EA0282478766D007828E5 /* SceneDelegate.swift in Sources */,
 				240EA05D24788076007828E5 /* CheckIn.swift in Sources */,
+				2430C8F8247B13CB000FBA10 /* EventLocationCell.swift in Sources */,
 				2430C8DB247A19FA000FBA10 /* UIViewController+Extension.swift in Sources */,
 				2430C8E8247A26F8000FBA10 /* EventDetailViewModelProtocol.swift in Sources */,
 				2430C8D22479DD51000FBA10 /* EventViewModel.swift in Sources */,

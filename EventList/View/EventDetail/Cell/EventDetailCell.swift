@@ -65,6 +65,7 @@ class EventDetailCell: UITableViewCell {
 extension EventDetailCell {
     
     private func commonInit() {
+        selectionStyle = .none
         addSubview(labelTitle)
         addSubview(labelDate)
         addSubview(labelPrice)

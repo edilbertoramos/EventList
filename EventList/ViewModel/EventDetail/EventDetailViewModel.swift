@@ -31,8 +31,9 @@ final class EventDetailViewModel: EventDetailViewModelProtocol {
                                               description: event.description,
                                               date: event.date?.toDate.toString,
                                               price: event.price?.toCurrency)
+                let location = EventLocation.init(latitude: event.latitude, longitude: event.longitude)
                 self.event.accept(event)
-                self.details.accept([detail])
+                self.details.accept([detail, location])
             } else {
                 self.errorMessage.accept(serviceResponse.errorMessage)
             }

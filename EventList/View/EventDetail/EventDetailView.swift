@@ -1,5 +1,5 @@
 //
-//  EventView.swift
+//  EventDetailView.swift
 //  EventList
 //
 //  Created by EDILBERTO DA SILVA RAMOS JUNIOR on 23/05/20.
@@ -9,10 +9,9 @@
 import UIKit
 import PureLayout
 
-class EventView: UIView {
+class EventDetailView: UIView {
     
-    public let tableView = UITableView.newAutoLayout()
-    private let estimateRowHeight: CGFloat = 400
+    public let contentView = UIView.newAutoLayout()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,15 +24,13 @@ class EventView: UIView {
     }
     
     private func commonInit() {
-        addSubview(tableView)
-        tableView.separatorStyle = .none
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = estimateRowHeight
+        addSubview(contentView)
+        contentView.backgroundColor = .white
         autoLayout()
     }
 
     private func autoLayout() {
-        tableView.autoPinEdgesToSuperviewEdges()
+        contentView.autoPinEdgesToSuperviewEdges()
     }
     
 }

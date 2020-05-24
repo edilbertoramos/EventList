@@ -38,6 +38,10 @@
 		2430C8D22479DD51000FBA10 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C8D12479DD51000FBA10 /* EventViewModel.swift */; };
 		2430C8D42479DE33000FBA10 /* EventViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C8D32479DE33000FBA10 /* EventViewModelProtocol.swift */; };
 		2430C8DB247A19FA000FBA10 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C8DA247A19FA000FBA10 /* UIViewController+Extension.swift */; };
+		2430C8E1247A269E000FBA10 /* EventDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C8E0247A269E000FBA10 /* EventDetailViewModel.swift */; };
+		2430C8E3247A26B4000FBA10 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C8E2247A26B4000FBA10 /* EventDetailViewController.swift */; };
+		2430C8E5247A26CE000FBA10 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C8E4247A26CE000FBA10 /* EventDetailView.swift */; };
+		2430C8E8247A26F8000FBA10 /* EventDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C8E7247A26F8000FBA10 /* EventDetailViewModelProtocol.swift */; };
 		25769681C7EDA1439B755E61 /* Pods_EventList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9391656A09E9E764398D0956 /* Pods_EventList.framework */; };
 		9CE85CE15584A5AA54455DDB /* Pods_EventListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9F8C228F8055227B99B5AE /* Pods_EventListUITests.framework */; };
 		F68307F530D143F38ED28067 /* Pods_EventListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69986FFBF8F06ED1871A01FD /* Pods_EventListTests.framework */; };
@@ -99,6 +103,10 @@
 		2430C8D12479DD51000FBA10 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		2430C8D32479DE33000FBA10 /* EventViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModelProtocol.swift; sourceTree = "<group>"; };
 		2430C8DA247A19FA000FBA10 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		2430C8E0247A269E000FBA10 /* EventDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewModel.swift; sourceTree = "<group>"; };
+		2430C8E2247A26B4000FBA10 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		2430C8E4247A26CE000FBA10 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		2430C8E7247A26F8000FBA10 /* EventDetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewModelProtocol.swift; sourceTree = "<group>"; };
 		4F53286F28371B34B710F054 /* Pods-EventList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventList.debug.xcconfig"; path = "Target Support Files/Pods-EventList/Pods-EventList.debug.xcconfig"; sourceTree = "<group>"; };
 		69986FFBF8F06ED1871A01FD /* Pods_EventListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		830F66CFFF00DB5FF337716C /* Pods-EventListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventListTests.debug.xcconfig"; path = "Target Support Files/Pods-EventListTests/Pods-EventListTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -265,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				240EA09C2479449A007828E5 /* Event */,
+				2430C8DD247A265F000FBA10 /* EventDetail */,
 				2430C8C62479BBE2000FBA10 /* Utils */,
 				2430C8DC247A1A00000FBA10 /* Extension */,
 			);
@@ -329,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				2430C8D52479DE3C000FBA10 /* Event */,
+				2430C8E6247A26D7000FBA10 /* EventDetail */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -348,6 +358,24 @@
 				2430C8DA247A19FA000FBA10 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		2430C8DD247A265F000FBA10 /* EventDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2430C8E2247A26B4000FBA10 /* EventDetailViewController.swift */,
+				2430C8E4247A26CE000FBA10 /* EventDetailView.swift */,
+			);
+			path = EventDetail;
+			sourceTree = "<group>";
+		};
+		2430C8E6247A26D7000FBA10 /* EventDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2430C8E0247A269E000FBA10 /* EventDetailViewModel.swift */,
+				2430C8E7247A26F8000FBA10 /* EventDetailViewModelProtocol.swift */,
+			);
+			path = EventDetail;
 			sourceTree = "<group>";
 		};
 		A0624FB88B1347179A2D6AC1 /* Pods */ = {
@@ -594,6 +622,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2430C8E5247A26CE000FBA10 /* EventDetailView.swift in Sources */,
 				240EA08F2478AE41007828E5 /* EventService.swift in Sources */,
 				2430C8D42479DE33000FBA10 /* EventViewModelProtocol.swift in Sources */,
 				240EA0892478AD06007828E5 /* ServiceEndpoint.swift in Sources */,
@@ -609,6 +638,7 @@
 				240EA0282478766D007828E5 /* SceneDelegate.swift in Sources */,
 				240EA05D24788076007828E5 /* CheckIn.swift in Sources */,
 				2430C8DB247A19FA000FBA10 /* UIViewController+Extension.swift in Sources */,
+				2430C8E8247A26F8000FBA10 /* EventDetailViewModelProtocol.swift in Sources */,
 				2430C8D22479DD51000FBA10 /* EventViewModel.swift in Sources */,
 				240EA07D2478A965007828E5 /* ServiceResponse.swift in Sources */,
 				240EA0812478A988007828E5 /* ELError.swift in Sources */,
@@ -620,6 +650,8 @@
 				2430C8C82479BC1D000FBA10 /* ImageItem.swift in Sources */,
 				240EA09E247944BB007828E5 /* EventView.swift in Sources */,
 				240EA07B2478A94F007828E5 /* ServiceHelper.swift in Sources */,
+				2430C8E3247A26B4000FBA10 /* EventDetailViewController.swift in Sources */,
+				2430C8E1247A269E000FBA10 /* EventDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

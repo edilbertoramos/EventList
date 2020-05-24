@@ -14,8 +14,8 @@ class EventViewController: UIViewController {
 
     private let eventView = EventView()
     private let disposeBag = DisposeBag()
-    private var viewModel = EventViewModel()
-
+    private var viewModel: EventViewModelProtocol?
+    
     override func loadView() {
         self.view = eventView
     }
@@ -23,9 +23,12 @@ class EventViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        viewModel.fetchEvents()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.fetchEvents()
+    }
 }
 
 //MARK: - Rx Setup
@@ -33,6 +36,7 @@ extension EventViewController {
     
     private func setup() {
         title = "Events"
+        viewModel = EventViewModel.init()
         eventView.tableView.register(EventCell.self, forCellReuseIdentifier: EventCell.cellIdentifier)
         setupTableView()
         setupError()
@@ -40,7 +44,7 @@ extension EventViewController {
     }
     
     private func setupTableView() {
-        viewModel.events.asObservable()
+        viewModel?.events.asObservable()
             .bind(to: eventView.tableView.rx.items) {
                 tableView, row, event in
                 let indexPath = IndexPath(row: row, section: 0)
@@ -51,7 +55,7 @@ extension EventViewController {
     }
     
     private func setupError() {
-        viewModel.errorMessage.asObservable()
+        viewModel?.errorMessage.asObservable()
             .subscribe(onNext: {
                 message in
                 if let message = message {
@@ -68,9 +72,14 @@ extension EventViewController {
             .rx
             .modelSelected(Event.self)
             .subscribe(onNext: { event in
-                // TODO: - push to event detail -
                 if let indexPath = self.eventView.tableView.indexPathForSelectedRow {
                     self.eventView.tableView.deselectRow(at: indexPath, animated: true)
+                }
+                if let eventId = event.id {
+                    DispatchQueue.main.async {
+                        let controller = EventDetailViewController.init(eventId: eventId)
+                        _ = self.navigationController?.pushViewController(controller, animated: true)
+                    }
                 }
             })
             .disposed(by: disposeBag)

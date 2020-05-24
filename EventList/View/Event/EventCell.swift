@@ -71,8 +71,8 @@ extension EventCell {
 //MARK: Public Methods
 extension EventCell {
    
-    public func fill(title: String) {
-        labelTitle.text = title
+    public func fill(event: Event) {
+        labelTitle.text = event.title
         imageViewEvent.image = ImageItem.template.image
     }
     

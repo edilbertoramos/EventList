@@ -14,7 +14,8 @@ import PureLayout
 class EventView: UIView {
     
     public let tableView = UITableView.newAutoLayout()
-
+    private let estimateRowHeight: CGFloat = 400
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -28,6 +29,8 @@ class EventView: UIView {
     private func commonInit() {
         addSubview(tableView)
         tableView.separatorStyle = .none
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = estimateRowHeight
         autoLayout()
     }
 

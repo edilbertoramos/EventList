@@ -15,6 +15,7 @@ final class EventDetailViewModel: EventDetailViewModelProtocol {
     internal var eventId: String = ""
     internal var service: EventServiceProtocol = EventService()
     public var event: BehaviorRelay<Event?> = BehaviorRelay(value: nil)
+    public var details: BehaviorRelay<[Any]> = BehaviorRelay(value: [])
     public var image: BehaviorRelay<UIImage?> = BehaviorRelay(value: nil)
     public var errorMessage: BehaviorRelay<String?> = BehaviorRelay(value: nil)
 
@@ -25,7 +26,13 @@ final class EventDetailViewModel: EventDetailViewModelProtocol {
     func fetchEvent() {
         service.event(with: self.eventId) { (serviceResponse) in
             if serviceResponse.isSuccess {
-                self.event.accept(serviceResponse.data!)
+                let event = serviceResponse.data!
+                let detail = EventDetail.init(title: event.title,
+                                              description: event.description,
+                                              date: event.date?.toDate.toString,
+                                              price: event.price?.toCurrency)
+                self.event.accept(event)
+                self.details.accept([detail])
             } else {
                 self.errorMessage.accept(serviceResponse.errorMessage)
             }
@@ -46,4 +53,5 @@ final class EventDetailViewModel: EventDetailViewModelProtocol {
             }
         }
     }
+    
 }

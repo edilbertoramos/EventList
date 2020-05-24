@@ -16,6 +16,7 @@ class EventCell: UITableViewCell {
 
     private let labelTitle: UILabel = {
         let label = UILabel.init()
+        label.font = .boldSystemFont(ofSize: 20)
         return label
     }()
     
@@ -45,8 +46,8 @@ class EventCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        textLabel?.text = nil
-        imageView?.image = nil
+        labelTitle.text = nil
+        imageViewEvent.image = nil
     }
 
 }

@@ -37,7 +37,7 @@ class EventViewController: UITableViewController {
 extension EventViewController {
     
     private func applyLanguage() {
-        title = "Events"
+        title = "Eventos"
     }
     
     private func applyStyle() {
@@ -72,7 +72,10 @@ extension EventViewController {
                 message in
                 if let message = message {
                     let alert = UIAlertController(title: "Ocorreu um erro", message: message, preferredStyle: .alert)
-                    alert.addAction(.init(title: "OK", style: .default))
+                    let action = UIAlertAction.init(title: "Tentar novamente", style: .default) { (_) in
+                        self.viewModel?.fetchEvents()
+                    }
+                    alert.addAction(action)
                     self.present(alert, animated: true, completion: nil)
                 }
             })

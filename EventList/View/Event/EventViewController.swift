@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class EventViewController: UIViewController {
+class EventViewController: UITableViewController {
 
     private let eventView = EventView()
     private let disposeBag = DisposeBag()
@@ -22,6 +22,8 @@ class EventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        applyStyle()
+        applyLanguage()
         setup()
     }
 
@@ -31,13 +33,23 @@ class EventViewController: UIViewController {
     }
 }
 
+//MARK: - Apply
+extension EventViewController {
+    
+    private func applyLanguage() {
+        title = "Events"
+    }
+    
+    private func applyStyle() {
+        eventView.tableView.register(EventCell.self, forCellReuseIdentifier: EventCell.cellIdentifier)
+    }
+}
+
 //MARK: - Rx Setup
 extension EventViewController {
     
     private func setup() {
-        title = "Events"
         viewModel = EventViewModel.init()
-        eventView.tableView.register(EventCell.self, forCellReuseIdentifier: EventCell.cellIdentifier)
         setupTableView()
         setupError()
         setupSelection()

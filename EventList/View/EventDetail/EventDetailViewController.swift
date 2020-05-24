@@ -9,24 +9,29 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import PureLayout
 
-class EventDetailViewController: UIViewController {
+class EventDetailViewController: UITableViewController {
 
-    private let eventDetailView = EventDetailView()
     private let disposeBag = DisposeBag()
     private var viewModel: EventDetailViewModelProtocol?
+    
+    private let imageViewEvent: UIImageView = {
+        let size = CGSize.init(width: 400, height: 340)
+        let frame = CGRect.init(origin: .zero, size: size)
+        let imageView = UIImageView.init(frame: frame)
+        return imageView
+    }()
     
     convenience init(eventId: String) {
         self.init()
         viewModel = EventDetailViewModel.init(eventId: eventId)
     }
     
-    override func loadView() {
-        self.view = eventDetailView
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        applyStyle()
+        applyLanguage()
         setup()
     }
 
@@ -36,13 +41,28 @@ class EventDetailViewController: UIViewController {
     }
 }
 
+//MARK: - Apply
+extension EventDetailViewController {
+    
+    private func applyLanguage() {
+        title = "Event Detail"
+    }
+    
+    private func applyStyle() {
+        if #available(iOS 13.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        }
+        tableView.tableHeaderView = imageViewEvent
+    }
+}
+
 //MARK: - Rx Setup
 extension EventDetailViewController {
     
     private func setup() {
-        title = "Event Detail"
         setupEventData()
         setupError()
+        setupImage()
     }
     
     private func setupEventData() {
@@ -51,6 +71,7 @@ extension EventDetailViewController {
                 event in
                 if let event = event {
                    print(event)
+                    self.viewModel?.fetchImage()
                 }
             })
             .disposed(by: disposeBag)
@@ -65,6 +86,15 @@ extension EventDetailViewController {
                     alert.addAction(.init(title: "OK", style: .default))
                     self.present(alert, animated: true, completion: nil)
                 }
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func setupImage() {
+        viewModel?.image.asObservable()
+            .subscribe(onNext: {
+                image in
+                self.imageViewEvent.image = image
             })
             .disposed(by: disposeBag)
     }

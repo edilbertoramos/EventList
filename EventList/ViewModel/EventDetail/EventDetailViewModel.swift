@@ -6,7 +6,7 @@
 //  Copyright © 2020 Edilberto Ramos. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import RxSwift
 import RxCocoa
 
@@ -15,6 +15,7 @@ final class EventDetailViewModel: EventDetailViewModelProtocol {
     internal var eventId: String = ""
     internal var service: EventServiceProtocol = EventService()
     public var event: BehaviorRelay<Event?> = BehaviorRelay(value: nil)
+    public var image: BehaviorRelay<UIImage?> = BehaviorRelay(value: nil)
     public var errorMessage: BehaviorRelay<String?> = BehaviorRelay(value: nil)
 
     init(eventId: String) {
@@ -31,4 +32,18 @@ final class EventDetailViewModel: EventDetailViewModelProtocol {
         }
     }
     
+    func fetchImage() {
+        guard let uri = event.value?.image else { return }
+        service.image(with: uri) { (success, data) in
+            if success {
+                if let data = data, let image = UIImage(data: data) {
+                    self.image.accept(image)
+                } else {
+                    self.image.accept(ImageItem.template.image)
+                }
+            } else {
+                self.image.accept(ImageItem.template.image)
+            }
+        }
+    }
 }

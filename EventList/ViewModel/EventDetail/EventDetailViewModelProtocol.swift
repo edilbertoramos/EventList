@@ -6,15 +6,17 @@
 //  Copyright © 2020 Edilberto Ramos. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import RxCocoa
 
 protocol EventDetailViewModelProtocol {
     
     var eventId: String { get set }
     var event: BehaviorRelay<Event?> { get set }
+    var image: BehaviorRelay<UIImage?> { get set }
     var errorMessage: BehaviorRelay<String?> { get set }
     var service: EventServiceProtocol { get set }
     func fetchEvent()
-    
+    func fetchImage()
+
 }

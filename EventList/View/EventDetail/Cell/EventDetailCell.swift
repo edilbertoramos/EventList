@@ -12,6 +12,7 @@ class EventDetailCell: UITableViewCell {
 
     public static let cellIdentifier = "EventDetailCellIdentifier"
     private let margin: CGFloat = 16
+    private let buttonCheckInSize: CGSize = CGSize.init(width: 100, height: 30)
 
     private let labelTitle: UILabel = {
         let label = UILabel.init()
@@ -46,6 +47,16 @@ class EventDetailCell: UITableViewCell {
         return view
     }()
     
+    internal let buttonCheckIn: UIButton = {
+        let button = UIButton.init()
+        button.setTitle("CHEKC-IN", for: .normal)
+        button.layer.cornerRadius = 6
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .systemBlue
+        button.titleLabel?.font = .boldSystemFont(ofSize: 16)
+        return button
+    }()
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -78,6 +89,7 @@ extension EventDetailCell {
         addSubview(labelPrice)
         addSubview(labelDescription)
         addSubview(viewSeparator)
+        addSubview(buttonCheckIn)
         autoLayout()
     }
     
@@ -86,11 +98,15 @@ extension EventDetailCell {
         labelTitle.autoPinEdge(toSuperviewEdge: .leading, withInset: margin)
         labelTitle.autoPinEdge(toSuperviewEdge: .trailing, withInset: margin)
         
-        labelPrice.autoPinEdge(.top, to: .bottom, of: labelTitle, withOffset: margin/3)
-        labelPrice.autoPinEdge(toSuperviewEdge: .trailing, withInset: margin)
-        
-        labelDate.autoAlignAxis(.horizontal, toSameAxisOf: labelPrice)
+        labelDate.autoPinEdge(.top, to: .bottom, of: labelTitle, withOffset: margin/4)
         labelDate.autoPinEdge(toSuperviewEdge: .leading, withInset: margin)
+
+        labelPrice.autoPinEdge(.top, to: .bottom, of: labelDate, withOffset: margin/4)
+        labelPrice.autoPinEdge(toSuperviewEdge: .leading, withInset: margin)
+        
+        buttonCheckIn.autoPinEdge(.top, to: .bottom, of: labelTitle, withOffset: margin/2)
+        buttonCheckIn.autoPinEdge(toSuperviewEdge: .trailing, withInset: margin)
+        buttonCheckIn.autoSetDimensions(to: buttonCheckInSize)
 
         viewSeparator.autoPinEdge(.top, to: .bottom, of: labelPrice, withOffset: margin/2)
         viewSeparator.autoPinEdge(toSuperviewEdge: .leading)

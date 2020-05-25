@@ -12,8 +12,8 @@ import RxCocoa
 
 class EventViewController: UITableViewController {
 
-    private let eventView = EventView()
-    private let disposeBag = DisposeBag()
+    private let eventView = EventView.init()
+    private let disposeBag = DisposeBag.init()
     private var viewModel: EventViewModelProtocol?
     
     override func loadView() {
@@ -42,6 +42,9 @@ extension EventViewController {
     
     private func applyStyle() {
         eventView.tableView.register(EventCell.self, forCellReuseIdentifier: EventCell.cellIdentifier)
+        if #available(iOS 13.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        }
     }
 }
 

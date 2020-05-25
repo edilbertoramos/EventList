@@ -49,6 +49,8 @@
 		2430C8F8247B13CB000FBA10 /* EventLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C8F7247B13CB000FBA10 /* EventLocationCell.swift */; };
 		2430C8FA247B1562000FBA10 /* EventLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C8F9247B1562000FBA10 /* EventLocation.swift */; };
 		2430C8FC247B222C000FBA10 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2430C8FB247B222C000FBA10 /* MapKit.framework */; };
+		2430C8FF247B5AE8000FBA10 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C8FE247B5AE7000FBA10 /* CheckInViewController.swift */; };
+		2430C901247B5B11000FBA10 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C900247B5B11000FBA10 /* CheckInView.swift */; };
 		25769681C7EDA1439B755E61 /* Pods_EventList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9391656A09E9E764398D0956 /* Pods_EventList.framework */; };
 		9CE85CE15584A5AA54455DDB /* Pods_EventListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9F8C228F8055227B99B5AE /* Pods_EventListUITests.framework */; };
 		F68307F530D143F38ED28067 /* Pods_EventListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69986FFBF8F06ED1871A01FD /* Pods_EventListTests.framework */; };
@@ -121,6 +123,8 @@
 		2430C8F7247B13CB000FBA10 /* EventLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLocationCell.swift; sourceTree = "<group>"; };
 		2430C8F9247B1562000FBA10 /* EventLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLocation.swift; sourceTree = "<group>"; };
 		2430C8FB247B222C000FBA10 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2430C8FE247B5AE7000FBA10 /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
+		2430C900247B5B11000FBA10 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
 		4F53286F28371B34B710F054 /* Pods-EventList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventList.debug.xcconfig"; path = "Target Support Files/Pods-EventList/Pods-EventList.debug.xcconfig"; sourceTree = "<group>"; };
 		69986FFBF8F06ED1871A01FD /* Pods_EventListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		830F66CFFF00DB5FF337716C /* Pods-EventListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventListTests.debug.xcconfig"; path = "Target Support Files/Pods-EventListTests/Pods-EventListTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -291,6 +295,7 @@
 			children = (
 				240EA09C2479449A007828E5 /* Event */,
 				2430C8DD247A265F000FBA10 /* EventDetail */,
+				2430C8FD247B5ABD000FBA10 /* CheckIn */,
 				2430C8C62479BBE2000FBA10 /* Utils */,
 				2430C8DC247A1A00000FBA10 /* Extension */,
 			);
@@ -413,6 +418,15 @@
 				2430C8F7247B13CB000FBA10 /* EventLocationCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		2430C8FD247B5ABD000FBA10 /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				2430C8FE247B5AE7000FBA10 /* CheckInViewController.swift */,
+				2430C900247B5B11000FBA10 /* CheckInView.swift */,
+			);
+			path = CheckIn;
 			sourceTree = "<group>";
 		};
 		A0624FB88B1347179A2D6AC1 /* Pods */ = {
@@ -665,8 +679,10 @@
 				2430C8F2247AFA6C000FBA10 /* DateFormatItem.swift in Sources */,
 				240EA0892478AD06007828E5 /* ServiceEndpoint.swift in Sources */,
 				240EA07F2478A972007828E5 /* ServiceError.swift in Sources */,
+				2430C8FF247B5AE8000FBA10 /* CheckInViewController.swift in Sources */,
 				240EA0912478AFAE007828E5 /* CheckInServiceProtocol.swift in Sources */,
 				240EA0962478B826007828E5 /* Encodable+Extension.swift in Sources */,
+				2430C901247B5B11000FBA10 /* CheckInView.swift in Sources */,
 				2430C8EE247AF9CD000FBA10 /* Double+Extension.swift in Sources */,
 				240EA09B2478BD05007828E5 /* EventViewController.swift in Sources */,
 				2430C8C524795E2D000FBA10 /* EventCell.swift in Sources */,

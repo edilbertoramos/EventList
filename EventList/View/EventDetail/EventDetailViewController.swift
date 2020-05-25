@@ -13,7 +13,7 @@ import PureLayout
 
 class EventDetailViewController: UITableViewController {
 
-    private let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag.init()
     private var viewModel: EventDetailViewModelProtocol?
     private let estimateRowHeight: CGFloat = 400
 
@@ -59,13 +59,8 @@ extension EventDetailViewController {
         tableView.register(EventDetailCell.self, forCellReuseIdentifier: EventDetailCell.cellIdentifier)
         tableView.register(EventLocationCell.self, forCellReuseIdentifier: EventLocationCell.cellIdentifier)
 
-        let buttonCheckIn = UIBarButtonItem.init(title: "Check-In", style: .plain, target: self, action: #selector(checkIn))
         let buttonShare = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: #selector(share))
-        navigationItem.rightBarButtonItems = [buttonShare, buttonCheckIn]
-        
-        if #available(iOS 13.0, *) {
-            navigationController?.navigationBar.prefersLargeTitles = true
-        }
+        navigationItem.rightBarButtonItem = buttonShare
     }
 }
 
@@ -73,7 +68,9 @@ extension EventDetailViewController {
 extension EventDetailViewController {
     
     @objc private func checkIn() {
-        print("CheckIn")
+        guard let eventId = viewModel?.eventId else { return }
+        let controller = CheckInViewController.init(eventId: eventId)
+        _ = navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc private func share() {
@@ -109,6 +106,7 @@ extension EventDetailViewController {
                 if let eventDetail = detail as? EventDetail {
                     let cell = tableView.dequeueReusableCell(withIdentifier: EventDetailCell.cellIdentifier) as! EventDetailCell
                     cell.fill(eventDetail: eventDetail)
+                    cell.buttonCheckIn.addTarget(self, action: #selector(self.checkIn), for: .touchUpInside)
                     return cell
                 } else if let eventLocation = detail as? EventLocation {
                     let cell = tableView.dequeueReusableCell(withIdentifier: EventLocationCell.cellIdentifier) as! EventLocationCell

@@ -22,6 +22,7 @@ class EventDetailViewController: UITableViewController {
         let size = CGSize.init(width: 400, height: 340)
         let frame = CGRect.init(origin: .zero, size: size)
         let imageView = UIImageView.init(frame: frame)
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -47,7 +48,7 @@ class EventDetailViewController: UITableViewController {
 extension EventDetailViewController {
     
     private func applyLanguage() {
-        title = "Detalhes do evento"
+        title = "Detalhes"
     }
     
     private func applyStyle() {
@@ -75,7 +76,28 @@ extension EventDetailViewController {
     }
     
     @objc private func share() {
-        print("Share")
+        guard let event = viewModel?.event.value,
+              let title = event.title,
+              let description = event.description
+        else { return }
+        let activityViewController = UIActivityViewController.init(activityItems: ["\(title)\n\n\(description)"],
+                                                                   applicationActivities: nil)
+        
+        activityViewController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        activityViewController.popoverPresentationController?.permittedArrowDirections = .any
+        activityViewController.popoverPresentationController?.sourceRect = CGRect(x: 150, y: 150, width: 0, height: 0)
+        
+        activityViewController.excludedActivityTypes = [
+            .postToWeibo,
+            .print,
+            .assignToContact,
+            .saveToCameraRoll,
+            .addToReadingList,
+            .postToFlickr,
+            .postToVimeo,
+            .postToTencentWeibo
+        ]
+        self.present(activityViewController, animated: true, completion: nil)
     }
 }
 

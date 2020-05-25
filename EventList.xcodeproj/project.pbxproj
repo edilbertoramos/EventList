@@ -51,6 +51,15 @@
 		2430C8FC247B222C000FBA10 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2430C8FB247B222C000FBA10 /* MapKit.framework */; };
 		2430C8FF247B5AE8000FBA10 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C8FE247B5AE7000FBA10 /* CheckInViewController.swift */; };
 		2430C901247B5B11000FBA10 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C900247B5B11000FBA10 /* CheckInView.swift */; };
+		2430C904247B6736000FBA10 /* ELTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C903247B6736000FBA10 /* ELTextField.swift */; };
+		2430C907247B67C9000FBA10 /* CheckInViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C906247B67C9000FBA10 /* CheckInViewModelProtocol.swift */; };
+		2430C909247B67CF000FBA10 /* CheckInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C908247B67CF000FBA10 /* CheckInViewModel.swift */; };
+		2430C90C247B6C31000FBA10 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C90B247B6C31000FBA10 /* String+Extension.swift */; };
+		2430C90D247B6CB9000FBA10 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C90B247B6C31000FBA10 /* String+Extension.swift */; };
+		2430C90E247B6CBA000FBA10 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C90B247B6C31000FBA10 /* String+Extension.swift */; };
+		2430C912247B7C8C000FBA10 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C911247B7C8C000FBA10 /* Validator.swift */; };
+		2430C914247B82C9000FBA10 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C913247B82C9000FBA10 /* UIButton+Extension.swift */; };
+		2430C916247B8329000FBA10 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430C915247B8329000FBA10 /* UIImage+Extension.swift */; };
 		25769681C7EDA1439B755E61 /* Pods_EventList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9391656A09E9E764398D0956 /* Pods_EventList.framework */; };
 		9CE85CE15584A5AA54455DDB /* Pods_EventListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9F8C228F8055227B99B5AE /* Pods_EventListUITests.framework */; };
 		F68307F530D143F38ED28067 /* Pods_EventListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69986FFBF8F06ED1871A01FD /* Pods_EventListTests.framework */; };
@@ -125,6 +134,13 @@
 		2430C8FB247B222C000FBA10 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2430C8FE247B5AE7000FBA10 /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		2430C900247B5B11000FBA10 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
+		2430C903247B6736000FBA10 /* ELTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELTextField.swift; sourceTree = "<group>"; };
+		2430C906247B67C9000FBA10 /* CheckInViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewModelProtocol.swift; sourceTree = "<group>"; };
+		2430C908247B67CF000FBA10 /* CheckInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewModel.swift; sourceTree = "<group>"; };
+		2430C90B247B6C31000FBA10 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		2430C911247B7C8C000FBA10 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		2430C913247B82C9000FBA10 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		2430C915247B8329000FBA10 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		4F53286F28371B34B710F054 /* Pods-EventList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventList.debug.xcconfig"; path = "Target Support Files/Pods-EventList/Pods-EventList.debug.xcconfig"; sourceTree = "<group>"; };
 		69986FFBF8F06ED1871A01FD /* Pods_EventListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		830F66CFFF00DB5FF337716C /* Pods-EventListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventListTests.debug.xcconfig"; path = "Target Support Files/Pods-EventListTests/Pods-EventListTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				240EA03C2478766F007828E5 /* EventListTests.swift */,
+				2430C911247B7C8C000FBA10 /* Validator.swift */,
 				240EA03E2478766F007828E5 /* Info.plist */,
 			);
 			path = EventListTests;
@@ -297,7 +314,6 @@
 				2430C8DD247A265F000FBA10 /* EventDetail */,
 				2430C8FD247B5ABD000FBA10 /* CheckIn */,
 				2430C8C62479BBE2000FBA10 /* Utils */,
-				2430C8DC247A1A00000FBA10 /* Extension */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -315,8 +331,9 @@
 		2430C8C62479BBE2000FBA10 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				2430C8C72479BC1D000FBA10 /* ImageItem.swift */,
-				2430C8F1247AFA6C000FBA10 /* DateFormatItem.swift */,
+				2430C90A247B6C0A000FBA10 /* Enum */,
+				2430C8DC247A1A00000FBA10 /* Extension */,
+				2430C902247B66F7000FBA10 /* Widgets */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -362,6 +379,7 @@
 			children = (
 				2430C8D52479DE3C000FBA10 /* Event */,
 				2430C8E6247A26D7000FBA10 /* EventDetail */,
+				2430C905247B67A9000FBA10 /* CheckIn */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -381,6 +399,9 @@
 				2430C8DA247A19FA000FBA10 /* UIViewController+Extension.swift */,
 				2430C8ED247AF9CD000FBA10 /* Double+Extension.swift */,
 				2430C8EF247AF9DB000FBA10 /* Date+Extension.swift */,
+				2430C90B247B6C31000FBA10 /* String+Extension.swift */,
+				2430C913247B82C9000FBA10 /* UIButton+Extension.swift */,
+				2430C915247B8329000FBA10 /* UIImage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -427,6 +448,32 @@
 				2430C900247B5B11000FBA10 /* CheckInView.swift */,
 			);
 			path = CheckIn;
+			sourceTree = "<group>";
+		};
+		2430C902247B66F7000FBA10 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				2430C903247B6736000FBA10 /* ELTextField.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		2430C905247B67A9000FBA10 /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				2430C908247B67CF000FBA10 /* CheckInViewModel.swift */,
+				2430C906247B67C9000FBA10 /* CheckInViewModelProtocol.swift */,
+			);
+			path = CheckIn;
+			sourceTree = "<group>";
+		};
+		2430C90A247B6C0A000FBA10 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				2430C8C72479BC1D000FBA10 /* ImageItem.swift */,
+				2430C8F1247AFA6C000FBA10 /* DateFormatItem.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		A0624FB88B1347179A2D6AC1 /* Pods */ = {
@@ -677,8 +724,10 @@
 				240EA08F2478AE41007828E5 /* EventService.swift in Sources */,
 				2430C8D42479DE33000FBA10 /* EventViewModelProtocol.swift in Sources */,
 				2430C8F2247AFA6C000FBA10 /* DateFormatItem.swift in Sources */,
+				2430C914247B82C9000FBA10 /* UIButton+Extension.swift in Sources */,
 				240EA0892478AD06007828E5 /* ServiceEndpoint.swift in Sources */,
 				240EA07F2478A972007828E5 /* ServiceError.swift in Sources */,
+				2430C904247B6736000FBA10 /* ELTextField.swift in Sources */,
 				2430C8FF247B5AE8000FBA10 /* CheckInViewController.swift in Sources */,
 				240EA0912478AFAE007828E5 /* CheckInServiceProtocol.swift in Sources */,
 				240EA0962478B826007828E5 /* Encodable+Extension.swift in Sources */,
@@ -690,9 +739,12 @@
 				240EA05B24788069007828E5 /* Cupon.swift in Sources */,
 				240EA02A2478766D007828E5 /* ViewController.swift in Sources */,
 				2430C8FA247B1562000FBA10 /* EventLocation.swift in Sources */,
+				2430C909247B67CF000FBA10 /* CheckInViewModel.swift in Sources */,
 				240EA0262478766D007828E5 /* AppDelegate.swift in Sources */,
 				240EA0282478766D007828E5 /* SceneDelegate.swift in Sources */,
 				240EA05D24788076007828E5 /* CheckIn.swift in Sources */,
+				2430C907247B67C9000FBA10 /* CheckInViewModelProtocol.swift in Sources */,
+				2430C90C247B6C31000FBA10 /* String+Extension.swift in Sources */,
 				2430C8F8247B13CB000FBA10 /* EventLocationCell.swift in Sources */,
 				2430C8DB247A19FA000FBA10 /* UIViewController+Extension.swift in Sources */,
 				2430C8E8247A26F8000FBA10 /* EventDetailViewModelProtocol.swift in Sources */,
@@ -700,6 +752,7 @@
 				2430C8EC247AF8A3000FBA10 /* EventDetailCell.swift in Sources */,
 				240EA07D2478A965007828E5 /* ServiceResponse.swift in Sources */,
 				240EA0812478A988007828E5 /* ELError.swift in Sources */,
+				2430C916247B8329000FBA10 /* UIImage+Extension.swift in Sources */,
 				2430C8F0247AF9DB000FBA10 /* Date+Extension.swift in Sources */,
 				240EA0592478802C007828E5 /* Event.swift in Sources */,
 				240EA0932478B00F007828E5 /* CheckInService.swift in Sources */,
@@ -719,6 +772,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2430C90D247B6CB9000FBA10 /* String+Extension.swift in Sources */,
+				2430C912247B7C8C000FBA10 /* Validator.swift in Sources */,
 				240EA03D2478766F007828E5 /* EventListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -727,6 +782,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2430C90E247B6CBA000FBA10 /* String+Extension.swift in Sources */,
 				240EA0482478766F007828E5 /* EventListUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

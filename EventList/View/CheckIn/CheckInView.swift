@@ -17,8 +17,8 @@ class CheckInView: UIView {
 
     private let contentView = UIView.newAutoLayout()
     
-    internal let textFieldName: UITextField = {
-        let textField = UITextField.init()
+    let textFieldName: ELTextField = {
+        let textField = ELTextField.init()
         textField.placeholder = " Digite seu nome"
         textField.borderStyle = .none
         textField.backgroundColor = .groupTableViewBackground
@@ -28,8 +28,8 @@ class CheckInView: UIView {
         return textField
     }()
     
-    internal let textFieldEmail: UITextField = {
-        let textField = UITextField.init()
+    let textFieldEmail: ELTextField = {
+        let textField = ELTextField.init()
         textField.placeholder = " Digite seu email"
         textField.backgroundColor = .groupTableViewBackground
         textField.layer.cornerRadius = 6
@@ -40,11 +40,13 @@ class CheckInView: UIView {
     
     internal let buttonCheckIn: UIButton = {
         let button = UIButton.init()
-        button.setTitle("CHEKC-IN", for: .normal)
+        button.setTitle("CHECK-IN", for: .normal)
         button.layer.cornerRadius = 6
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .systemBlue
         button.titleLabel?.font = .boldSystemFont(ofSize: 16)
+        button.setBackgroundColor(.systemBlue, for: .normal)
+        button.isEnabled = false
+        button.setBackgroundColor(UIColor.lightGray.withAlphaComponent(0.4), for: .disabled)
         return button
     }()
     

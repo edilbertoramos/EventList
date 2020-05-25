@@ -10,6 +10,7 @@ target 'EventList' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'PureLayout'
+  pod 'SVProgressHUD'
 
   target 'EventListTests' do
     inherit! :search_paths

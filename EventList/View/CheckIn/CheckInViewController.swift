@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SVProgressHUD
 
 class CheckInViewController: UIViewController {
 
@@ -51,7 +52,9 @@ extension CheckInViewController {
 extension CheckInViewController {
     
     @objc private func checkIn() {
+        view.endEditing(true)
         guard let name = checkInView.textFieldName.text, let email = checkInView.textFieldEmail.text else { return }
+        SVProgressHUD.show()
         viewModel?.checkIn(name: name, email: email)
     }
     
@@ -62,7 +65,7 @@ extension CheckInViewController {
     
     private func setup() {
         setupTextField()
-        setupError()
+        setupRequest()
     }
 
     private func setupTextField() {
@@ -108,18 +111,15 @@ extension CheckInViewController {
         
     }
     
-    private func setupError() {
+    private func setupRequest() {
         viewModel?.requesSuccess.asObservable()
             .subscribe(onNext: {
                 success in
                 if let success = success, success {
-                    let alert = UIAlertController.init(title: "Alerta",
-                                                       message: "Check-in realizado com sucesso!", preferredStyle: .alert)
-                    let action = UIAlertAction.init(title: "OK", style: .default) { (_) in
+                    SVProgressHUD.showSuccess(withStatus: "Check-in realizado com sucesso!")
+                    SVProgressHUD.dismiss(withDelay: 2) {
                         _ = self.navigationController?.popViewController(animated: true)
                     }
-                    alert.addAction(action)
-                    self.present(alert, animated: true, completion: nil)
                 }
             })
             .disposed(by: disposeBag)
@@ -128,6 +128,7 @@ extension CheckInViewController {
             .subscribe(onNext: {
                 message in
                 if let message = message {
+                    SVProgressHUD.dismiss()
                     let alert = UIAlertController.init(title: "Ocorreu um erro", message: message, preferredStyle: .alert)
                     let action = UIAlertAction.init(title: "OK", style: .default)
                     alert.addAction(action)

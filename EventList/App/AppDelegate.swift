@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = EventViewController.init().embedInNavigation()
         window?.makeKeyAndVisible()
         return true
+    }
+    
+    func setupSVProgress() {
+        let progress = SVProgressHUD.appearance()
+        progress.font = .systemFont(ofSize: 14, weight: .semibold)
+        progress.backgroundColor = .groupTableViewBackground
+        progress.defaultStyle = .custom
+        progress.defaultMaskType = .black
+        progress.foregroundColor = .lightText
+        progress.ringThickness = 4.0
+        progress.ringRadius = 20
+        progress.minimumSize = CGSize(width: 400, height: 200)
     }
 
     // MARK: UISceneSession Lifecycle

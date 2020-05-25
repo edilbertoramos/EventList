@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SVProgressHUD
 
 class EventViewController: UITableViewController {
 
@@ -59,9 +60,11 @@ extension EventViewController {
     }
     
     private func setupTableView() {
+        SVProgressHUD.show()
         viewModel?.events.asObservable()
             .bind(to: eventView.tableView.rx.items) {
                 tableView, row, event in
+                SVProgressHUD.dismiss()
                 let indexPath = IndexPath(row: row, section: 0)
                 let cell = tableView.dequeueReusableCell(withIdentifier: EventCell.cellIdentifier, for: indexPath) as! EventCell
                 cell.fill(event: event)

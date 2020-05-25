@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import PureLayout
+import SVProgressHUD
 
 class EventDetailViewController: UITableViewController {
 
@@ -89,10 +90,12 @@ extension EventDetailViewController {
     }
     
     private func setupEventData() {
+        SVProgressHUD.show()
         viewModel?.event.asObservable()
             .subscribe(onNext: {
                 event in
                 if let _ = event {
+                    SVProgressHUD.dismiss()
                     self.viewModel?.fetchImage()
                 }
             })
@@ -123,6 +126,7 @@ extension EventDetailViewController {
             .subscribe(onNext: {
                 message in
                 if let message = message {
+                    SVProgressHUD.dismiss()
                     let alert = UIAlertController.init(title: "Ocorreu um erro", message: message, preferredStyle: .alert)
                     let action = UIAlertAction.init(title: "OK", style: .default) { (_) in
                         _ = self.navigationController?.popViewController(animated: true)

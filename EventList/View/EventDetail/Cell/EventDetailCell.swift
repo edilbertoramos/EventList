@@ -15,6 +15,7 @@ class EventDetailCell: UITableViewCell {
 
     private let labelTitle: UILabel = {
         let label = UILabel.init()
+        label.numberOfLines = 0
         label.font = .boldSystemFont(ofSize: 20)
         return label
     }()

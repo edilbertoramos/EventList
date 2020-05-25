@@ -11,12 +11,12 @@ import UIKit
 class EventCell: UITableViewCell {
 
     public static let cellIdentifier = "EventCellIdentifier"
-    private let imageViewHeight: CGFloat = 340
+    private let imageViewHeight: CGFloat = 320
     private let margin: CGFloat = 16
 
     private let labelTitle: UILabel = {
         let label = UILabel.init()
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = .boldSystemFont(ofSize: 18)
         return label
     }()
     
@@ -66,9 +66,9 @@ extension EventCell {
     private func autoLayout() {
         labelTitle.autoPinEdge(toSuperviewEdge: .top, withInset: margin)
         labelTitle.autoPinEdge(toSuperviewEdge: .leading, withInset: margin)
-        labelTitle.autoPinEdge(toSuperviewEdge: .trailing, withInset: -margin)
+        labelTitle.autoPinEdge(toSuperviewEdge: .trailing, withInset: margin)
 
-        imageViewEvent.autoPinEdge(.top, to: .bottom, of: labelTitle)
+        imageViewEvent.autoPinEdge(.top, to: .bottom, of: labelTitle, withOffset: margin/4)
         imageViewEvent.autoPinEdge(toSuperviewEdge: .leading, withInset: margin)
         imageViewEvent.autoPinEdge(toSuperviewEdge: .trailing, withInset: margin)
         imageViewEvent.autoPinEdge(toSuperviewEdge: .bottom, withInset: margin)

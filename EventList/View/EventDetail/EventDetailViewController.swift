@@ -105,15 +105,12 @@ extension EventDetailViewController {
         viewModel?.details.asObservable()
             .bind(to: tableView.rx.items) {
                 tableView, row, detail in
-                let indexPath = IndexPath(row: row, section: 0)
                 if let eventDetail = detail as? EventDetail {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: EventDetailCell.cellIdentifier,
-                                                             for: indexPath) as! EventDetailCell
+                    let cell = tableView.dequeueReusableCell(withIdentifier: EventDetailCell.cellIdentifier) as! EventDetailCell
                     cell.fill(eventDetail: eventDetail)
                     return cell
                 } else if let eventLocation = detail as? EventLocation {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: EventLocationCell.cellIdentifier,
-                                                             for: indexPath) as! EventLocationCell
+                    let cell = tableView.dequeueReusableCell(withIdentifier: EventLocationCell.cellIdentifier) as! EventLocationCell
                     cell.fill(eventLocation: eventLocation)
                     return cell
                 } else {

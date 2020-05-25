@@ -40,6 +40,12 @@ class EventDetailCell: UITableViewCell {
         return label
     }()
     
+    private let viewSeparator: UIView = {
+        let view = UIView.init()
+        view.backgroundColor = UIColor.systemGray.withAlphaComponent(0.3)
+        return view
+    }()
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -71,6 +77,7 @@ extension EventDetailCell {
         addSubview(labelDate)
         addSubview(labelPrice)
         addSubview(labelDescription)
+        addSubview(viewSeparator)
         autoLayout()
     }
     
@@ -80,15 +87,20 @@ extension EventDetailCell {
         labelTitle.autoPinEdge(toSuperviewEdge: .trailing, withInset: margin)
         
         labelPrice.autoPinEdge(.top, to: .bottom, of: labelTitle, withOffset: margin/3)
-        labelPrice.autoPinEdge(toSuperviewEdge: .leading, withInset: margin)
+        labelPrice.autoPinEdge(toSuperviewEdge: .trailing, withInset: margin)
         
         labelDate.autoAlignAxis(.horizontal, toSameAxisOf: labelPrice)
-        labelDate.autoPinEdge(toSuperviewEdge: .trailing, withInset: margin)
+        labelDate.autoPinEdge(toSuperviewEdge: .leading, withInset: margin)
 
-        labelDescription.autoPinEdge(.top, to: .bottom, of: labelPrice, withOffset: margin)
+        viewSeparator.autoPinEdge(.top, to: .bottom, of: labelPrice, withOffset: margin/2)
+        viewSeparator.autoPinEdge(toSuperviewEdge: .leading)
+        viewSeparator.autoPinEdge(toSuperviewEdge: .trailing)
+        viewSeparator.autoSetDimension(.height, toSize: 1)
+        
+        labelDescription.autoPinEdge(.top, to: .bottom, of: viewSeparator, withOffset: margin/2)
         labelDescription.autoPinEdge(toSuperviewEdge: .leading, withInset: margin)
         labelDescription.autoPinEdge(toSuperviewEdge: .trailing, withInset: margin)
-        labelDescription.autoPinEdge(toSuperviewEdge: .bottom, withInset: margin)
+        labelDescription.autoPinEdge(toSuperviewEdge: .bottom)
     }
     
 }

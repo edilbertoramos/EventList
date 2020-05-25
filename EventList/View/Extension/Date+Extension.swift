@@ -13,7 +13,7 @@ extension Date {
     var toString: String {
         let dateFormatter = DateFormatter.init()
         dateFormatter.dateFormat = DateFormaItem.fullDate.format
-        dateFormatter.dateStyle = .short
+        dateFormatter.dateStyle = .medium
         return dateFormatter.string(from: self)
     }
     

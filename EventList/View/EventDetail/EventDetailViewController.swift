@@ -52,6 +52,7 @@ extension EventDetailViewController {
     private func applyStyle() {
         tableView.dataSource = nil
         tableView.delegate = nil
+        tableView.separatorStyle = .none
         tableView.tableHeaderView = imageViewEvent
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = estimateRowHeight
